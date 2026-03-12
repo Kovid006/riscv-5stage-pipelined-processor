@@ -81,7 +81,7 @@ riscv-5stage-pipelined-processor
 - Branch prediction
 - Support for more RISC-V instructions
 - FPGA implementation
-- 
+  
 ## Tools Used
 - Verilog HDL
 - Xilinx Vivado Simulator
