@@ -25,8 +25,21 @@ The processor is divided into five stages:
 
 5. **WB – Write Back**
    - Writes results back to the register file
+## Pipeline Diagram
+
+```mermaid
+flowchart LR
+    PC --> IF[Instruction Fetch]
+    IF --> ID[Instruction Decode]
+    ID --> EX[Execute / ALU]
+    EX --> MEM[Memory Access]
+    MEM --> WB[Write Back]
+    WB --> REG[Register File]
+    REG --> ID
+```
 
 ## Project Structure
+```
 riscv-5stage-pipelined-processor
 │
 ├── ALU.v
@@ -39,10 +52,12 @@ riscv-5stage-pipelined-processor
 ├── pipeline_regs.v
 ├── reg_file.v
 └── tb.v
+```
 
 ## Key Modules
 
 | Module | Description |
+|------|-------------|
 | ALU.v | Performs arithmetic and logic operations |
 | alu_cntrl.v | Generates ALU control signals |
 | fetch.v | Handles instruction fetching and PC update |
